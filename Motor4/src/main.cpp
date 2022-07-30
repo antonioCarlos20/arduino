@@ -1,13 +1,17 @@
 #include <Arduino.h>
 
-#define motorVel 7
+#define motorVel 5
 #define motorIn1 6
-#define motorIn2 5
+#define motorIn2 7
 
 void setup() {
-  // put your setup code here, to run once:
+  pinMode( motorVel, OUTPUT );
+  pinMode( motorIn1, OUTPUT );
+  pinMode( motorIn2, OUTPUT );
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  digitalWrite( motorIn1, HIGH );
+  digitalWrite( motorIn2, LOW );
+  analogWrite( motorVel, 25 );
 }
