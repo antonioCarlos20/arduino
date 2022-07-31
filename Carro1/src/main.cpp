@@ -26,6 +26,46 @@ void frente(){
   analogWrite( motor2Vel, 255 );
 }
 
+void re(){
+  digitalWrite( motor1In1, LOW );
+  digitalWrite( motor1In2, HIGH );
+  digitalWrite( motor2In1, LOW );
+  digitalWrite( motor2In2, HIGH );
+
+  analogWrite( motor1Vel, 255 );
+  analogWrite( motor2Vel, 255 );
+}
+
+void esquerda(){
+  digitalWrite( motor1In1, LOW );
+  digitalWrite( motor1In2, HIGH );
+  digitalWrite( motor2In1, HIGH );
+  digitalWrite( motor2In2, LOW );
+
+  analogWrite( motor1Vel, 255 );
+  analogWrite( motor2Vel, 255 );
+}
+
+void direita(){
+  digitalWrite( motor1In1, HIGH );
+  digitalWrite( motor1In2, LOW );
+  digitalWrite( motor2In1, LOW );
+  digitalWrite( motor2In2, HIGH );
+
+  analogWrite( motor1Vel, 255 );
+  analogWrite( motor2Vel, 255 );
+}
+
+void freia(){
+  digitalWrite( motor1In1, LOW );
+  digitalWrite( motor1In2, LOW );
+  digitalWrite( motor2In1, LOW );
+  digitalWrite( motor2In2, LOW );
+
+  analogWrite( motor1Vel, 0 );
+  analogWrite( motor2Vel, 0 );
+}
+
 void loop() {
   frente();
 }
