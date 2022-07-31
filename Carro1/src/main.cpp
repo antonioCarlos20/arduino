@@ -68,4 +68,19 @@ void freia(){
 
 void loop() {
   frente();
+  delay( 2000 );
+  freia();
+  delay( 1000 );
+  re();
+  delay( 2000 );
+  freia();
+  delay( 1000 );
+  esquerda();
+  delay( 2000 );
+  freia();
+  delay( 1000 );
+  direita();
+  delay( 2000 );
+  freia();
+  delay( 1000 );
 }
