@@ -16,7 +16,7 @@ void setup() {
   pinMode( motor2In2, OUTPUT );
 }
 
-void loop() {
+void frente(){
   digitalWrite( motor1In1, HIGH );
   digitalWrite( motor1In2, LOW );
   digitalWrite( motor2In1, HIGH );
@@ -24,4 +24,8 @@ void loop() {
 
   analogWrite( motor1Vel, 255 );
   analogWrite( motor2Vel, 255 );
+}
+
+void loop() {
+  frente();
 }
