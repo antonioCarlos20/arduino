@@ -14,17 +14,13 @@ void setup() {
   Serial.begin( 9600 );
 }
 
-int mensureDistance(){
+int mesureDistance(){
   digitalWrite(trig, LOW);
   delayMicroseconds(2);
   digitalWrite( trig, HIGH);
 
   duration = ( pulseIn( echo, HIGH ) / 2);
   dist = duration * 0.034;
-
-  // Serial.println( "Distance:" );
-  // Serial.print( distance );
-  // Serial.println( "cm" );
 
   delay( 1000 );
 
@@ -33,12 +29,17 @@ int mensureDistance(){
 
 void loop() {
 
-  distance = mensureDistance();
-  
+  distance = mesureDistance();
+
   Serial.println( "Distance:" );
   Serial.print( distance );
   Serial.println( "cm" );
 
-
+  
+  if( distance < 20 ){
+    Serial.println( "para() ");
+  }else{
+    Serial.println( "fente() ");
+  }
 
 }
