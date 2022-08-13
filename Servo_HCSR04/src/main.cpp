@@ -13,6 +13,8 @@ int mesureDistance(){
   digitalWrite( trig, LOW );
   delayMicroseconds( 10 );
   digitalWrite( trig, HIGH );
+  delayMicroseconds( 10 );
+  digitalWrite( trig, LOW );
 
   duration = ( pulseIn( echo, HIGH ) / 2 );
   dist = duration * 0.034;
@@ -21,9 +23,9 @@ int mesureDistance(){
 }
 
 void rotate(){
-  myservo.write( 45 );
-  delay( 1000 );
   myservo.write( 135 );
+  delay( 1000 );
+  myservo.write( 45 );
   delay( 1000 );
   myservo.write( 90 );
 }
@@ -43,6 +45,7 @@ void setup() {
 }
 
 void loop() {
+  delay( 1000 );
   distance = mesureDistance();
 
   verifyDistance( distance );
