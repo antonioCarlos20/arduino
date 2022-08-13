@@ -18,6 +18,16 @@ int mesureDistance(){
   return dist;
 }
 
+void rotate(){
+  
+}
+
+void verifyDistance( int distance ){
+  if( distance < 20 ){
+    rotate();
+  }
+}
+
 void setup() {
   pinMode( trig, OUTPUT);
   pinMode( echo, INPUT);
@@ -25,4 +35,6 @@ void setup() {
 
 void loop() {
   distance = mesureDistance();
+
+  verifyDistance( distance );
 }
