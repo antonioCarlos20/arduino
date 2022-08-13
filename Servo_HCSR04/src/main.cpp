@@ -7,6 +7,8 @@
 long duration;
 int dist, distance;
 
+Servo myservo;
+
 int mesureDistance(){
   digitalWrite( trig, LOW );
   delayMicroseconds( 10 );
@@ -19,7 +21,11 @@ int mesureDistance(){
 }
 
 void rotate(){
-  
+  myservo.write( 45 );
+  delay( 1000 );
+  myservo.write( 135 );
+  delay( 1000 );
+  myservo.write( 90 );
 }
 
 void verifyDistance( int distance ){
@@ -31,6 +37,9 @@ void verifyDistance( int distance ){
 void setup() {
   pinMode( trig, OUTPUT);
   pinMode( echo, INPUT);
+
+  myservo.attach( 9 );
+  myservo.write( 90 );
 }
 
 void loop() {
