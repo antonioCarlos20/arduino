@@ -58,7 +58,14 @@ void freia( int vel){
 }
 
 void setup() {
-  // put your setup code here, to run once:
+  pinMode( motor1Vel, OUTPUT );
+  pinMode( motor1In1, OUTPUT );
+  pinMode( motor1In2, OUTPUT );
+  pinMode( motor2Vel, OUTPUT );
+  pinMode( motor2In1, OUTPUT );
+  pinMode( motor2In2, OUTPUT );
+
+  freia( 0 );
 }
 
 void loop() {
