@@ -74,6 +74,11 @@ void setup() {
   pinMode( motor2In1, OUTPUT );
   pinMode( motor2In2, OUTPUT );
 
+  pinMode( trig, OUTPUT);
+  pinMode( echo, INPUT);
+  myservo.attach( 9 );
+  myservo.write( 90 );
+
   freia( 0 );
 }
 
