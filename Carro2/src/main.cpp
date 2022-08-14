@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Servo.h>
 
 #define motor1Vel 5
 #define motor1In1 6
@@ -6,6 +7,14 @@
 #define motor2Vel 9
 #define motor2In1 10
 #define motor2In2 11
+
+#define trig 3
+#define echo 2
+
+long duration;
+int dist, distance;
+
+Servo myservo;
 
 void frente( int vel){
   digitalWrite( motor1In1, HIGH );
