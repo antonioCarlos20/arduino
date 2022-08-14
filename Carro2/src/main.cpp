@@ -12,7 +12,7 @@
 #define echo 2
 
 long duration;
-int dist, distance;
+int dist, distance, distEsq, distDir, distFrente;
 
 Servo myservo;
 
@@ -64,6 +64,29 @@ void freia( int vel){
 
   analogWrite( motor1Vel, vel );
   analogWrite( motor2Vel, vel );
+}
+
+int mesureDistance(){
+  digitalWrite( trig, LOW );
+  delayMicroseconds( 10 );
+  digitalWrite( trig, HIGH );
+  delayMicroseconds( 10 );
+  digitalWrite( trig, LOW );
+
+  duration = ( pulseIn( echo, HIGH ) / 2 );
+  dist = duration * 0.034;
+
+  return dist;
+}
+
+void find(){
+  myservo.write( 135 );
+  delayMicroseconds( 20 );
+
+  delay( 1000 );
+  myservo.write( 45 );
+  delay( 1000 );
+  myservo.write( 90 );
 }
 
 void setup() {
