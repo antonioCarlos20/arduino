@@ -16,71 +16,71 @@ void setup() {
   pinMode( motor2In2, OUTPUT );
 }
 
-void frente(){
+void frente( int vel){
   digitalWrite( motor1In1, HIGH );
   digitalWrite( motor1In2, LOW );
   digitalWrite( motor2In1, HIGH );
   digitalWrite( motor2In2, LOW );
 
-  analogWrite( motor1Vel, 255 );
-  analogWrite( motor2Vel, 255 );
+  analogWrite( motor1Vel, vel );
+  analogWrite( motor2Vel, vel );
 }
 
-void re(){
+void re( int vel){
   digitalWrite( motor1In1, LOW );
   digitalWrite( motor1In2, HIGH );
   digitalWrite( motor2In1, LOW );
   digitalWrite( motor2In2, HIGH );
 
-  analogWrite( motor1Vel, 255 );
-  analogWrite( motor2Vel, 255 );
+  analogWrite( motor1Vel, vel );
+  analogWrite( motor2Vel, vel );
 }
 
-void esquerda(){
+void esquerda( int vel){
   digitalWrite( motor1In1, LOW );
   digitalWrite( motor1In2, HIGH );
   digitalWrite( motor2In1, HIGH );
   digitalWrite( motor2In2, LOW );
 
-  analogWrite( motor1Vel, 255 );
-  analogWrite( motor2Vel, 255 );
+  analogWrite( motor1Vel, vel );
+  analogWrite( motor2Vel, vel );
 }
 
-void direita(){
+void direita( int vel){
   digitalWrite( motor1In1, HIGH );
   digitalWrite( motor1In2, LOW );
   digitalWrite( motor2In1, LOW );
   digitalWrite( motor2In2, HIGH );
 
-  analogWrite( motor1Vel, 255 );
-  analogWrite( motor2Vel, 255 );
+  analogWrite( motor1Vel, vel );
+  analogWrite( motor2Vel, vel );
 }
 
-void freia(){
+void freia( int vel){
   digitalWrite( motor1In1, LOW );
   digitalWrite( motor1In2, LOW );
   digitalWrite( motor2In1, LOW );
   digitalWrite( motor2In2, LOW );
 
-  analogWrite( motor1Vel, 0 );
-  analogWrite( motor2Vel, 0 );
+  analogWrite( motor1Vel, vel );
+  analogWrite( motor2Vel, vel );
 }
 
 void loop() {
-  frente();
+  frente( 125 );
   delay( 2000 );
-  freia();
+  freia( 0 );
   delay( 1000 );
-  re();
+  re( 125 );
   delay( 2000 );
-  freia();
+  freia( 0 );
   delay( 1000 );
-  esquerda();
+  esquerda( 125 );
   delay( 2000 );
-  freia();
+  freia( 0 );
   delay( 1000 );
-  direita();
+  direita( 125 );
   delay( 2000 );
-  freia();
+  freia( 0 );
   delay( 1000 );
 }
